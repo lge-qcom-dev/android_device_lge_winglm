@@ -35,6 +35,12 @@ PRODUCT_PACKAGES += \
     SettingsOverlayWinglm \
     SystemUIOverlayWinglm
 
+# Recovery
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.minui.blacklist_input_devices=winglm-swivel \
+    ro.minui.default_rotation=ROTATION_NONE \
+    ro.minui.default_touch_rotation=ROTATION_NONE
+
 # Soong namespace
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
