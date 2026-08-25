@@ -7,7 +7,9 @@
 # Inherit from common device tree
 include device/lge/sm7250-common/BoardConfigCommon.mk
 
-# Manifest
+# HIDL
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
