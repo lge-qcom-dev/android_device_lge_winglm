@@ -84,6 +84,12 @@ vendor/firmware/crbtfw32.tlv
 vendor/firmware/crnv32.bin
 vendor/firmware/crnv32u.bin
 
+# Display calibration
+vendor/etc/ltm_config_RM692C9_cmd_mode_dsc_dsi_panel.xml
+vendor/etc/ltm_config_SW43103_cmd_mode_dsc_dsi_panel.xml
+vendor/etc/qdcm_calib_data_RM692C9_cmd_mode_dsc_dsi_panel.xml
+vendor/etc/qdcm_calib_data_SW43103_cmd_mode_dsc_dsi_panel.xml
+
 # Camera
 vendor/lib64/com.qti.feature2.anchorsync.so
 vendor/lib64/com.qti.feature2.demux.so
