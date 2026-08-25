@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Display geometry -->
+    <dimen name="rounded_corner_radius">13dp</dimen>
+    <dimen name="status_bar_height_default">@dimen/status_bar_height_portrait</dimen>
+    <dimen name="status_bar_height_portrait">29dp</dimen>
+</resources>
