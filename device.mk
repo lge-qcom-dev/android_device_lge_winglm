@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/lge/caymanlm
+DEVICE_PATH := device/lge/winglm
 
-DEVICE_NAME := caymanlm
+DEVICE_NAME := winglm
 
 # Inherit from the common device configuration.
 $(call inherit-product, device/lge/sm7250-common/sm7250-common.mk)
@@ -30,14 +30,14 @@ $(call soong_config_set,LGE_FINGERPRINT_HAL,TARGET_HAS_EGISTEC_UDFPS,true)
 
 # Overlays
 PRODUCT_PACKAGES += \
-    ApertureOverlayCaymanlm \
-    FrameworksResOverlayCaymanlm \
-    SettingsOverlayCaymanlm \
-    SystemUIOverlayCaymanlm
+    ApertureOverlayWinglm \
+    FrameworksResOverlayWinglm \
+    SettingsOverlayWinglm \
+    SystemUIOverlayWinglm
 
 # Soong namespace
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Inherit from vendor makefiles.
-$(call inherit-product, vendor/lge/caymanlm/caymanlm-vendor.mk)
+$(call inherit-product, vendor/lge/winglm/winglm-vendor.mk)

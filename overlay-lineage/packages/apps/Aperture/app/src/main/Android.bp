@@ -1,4 +1,4 @@
 runtime_resource_overlay {
-    name: "ApertureOverlayCaymanlm",
-    vendor: true
+    name: "ApertureOverlayWinglm",
+    vendor: true,
 }

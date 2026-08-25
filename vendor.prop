@@ -1,11 +1,21 @@
 # Camera
 ro.vendor.lge.logical.camera=2
-ro.vendor.lge.aux.camera=2
-ro.vendor.lge.physical.camera=5
+ro.vendor.lge.aux.camera=1
+ro.vendor.lge.physical.camera=4
+
+# Display
+ro.vendor.lge.feature.display_notch_height=0
+ro.vendor.lge.feature.display_notch_width=0
+ro.vendor.lge.feature.edge_display=true
+ro.vendor.lge.feature.lge_display_shape=NORMAL
+ro.vendor.lge.feature.lge_display_type=POLED
+ro.vendor.lge.feature.multi_display=true
+ro.vendor.lge.feature.multi_display_type=swivel
 
 # Miscellaneous
 ro.vendor.lge.build.target_operator=LAO
 ro.vendor.lge.build.target_country=COM
 ro.vendor.lge.capp_cupss.rootdir=/product
 ro.vendor.lge.capp_cupss.op.dir=/product
-ro.vendor.lge.swversion=G90040d
+ro.vendor.lge.product.type=generic
+ro.vendor.lge.swversion=F100N40d
