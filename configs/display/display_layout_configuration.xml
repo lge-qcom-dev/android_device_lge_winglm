@@ -25,7 +25,8 @@
             <port>129</port>
         </display>
 
-        <display enabled="true">
+        <!-- Keep the swivel panel out of the default (AOD-capable) power group. -->
+        <display enabled="true" displayGroup="swivel">
             <port>130</port>
         </display>
     </layout>

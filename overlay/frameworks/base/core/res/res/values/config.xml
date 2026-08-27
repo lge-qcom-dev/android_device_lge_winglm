@@ -43,6 +43,12 @@
     <!-- Keep the primary display in landscape while the swivel is fully open. -->
     <integer name="config_lidOpenRotation">270</integer>
 
+    <!-- Do not fall back to mirroring the primary panel on the swivel display. -->
+    <bool name="config_localDisplaysMirrorContent">false</bool>
+
+    <!-- Keep a focused window and touch mode for each concurrently active display. -->
+    <bool name="config_perDisplayFocusEnabled">true</bool>
+
     <!-- The swivel is a posture sensor and must never turn the display off. -->
     <bool name="config_lidControlsScreenLock">false</bool>
     <bool name="config_lidControlsSleep">false</bool>
