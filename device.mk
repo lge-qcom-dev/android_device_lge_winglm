@@ -37,10 +37,12 @@ PRODUCT_COPY_FILES += \
 
 # Popup camera
 PRODUCT_PACKAGES += \
-    WingCameraHelper
+    WingCameraHelper \
+    android.hardware.camera.provider@2.4-service-winglm
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
+    $(LOCAL_PATH)/rootdir/etc/init/zz.init.winglm.camera.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/zz.init.winglm.camera.rc
 
 $(call soong_config_set,LGE_FINGERPRINT_HAL,TARGET_HAS_EGISTEC_UDFPS,true)
 
