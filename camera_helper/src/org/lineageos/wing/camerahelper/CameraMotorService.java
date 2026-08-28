@@ -21,22 +21,41 @@ public final class CameraMotorService extends Service {
     private static final long CAMERA_EVENT_DELAY_MILLIS = 100;
 
     private final Handler mHandler = new Handler(Looper.getMainLooper());
-    private final Runnable mRetractCamera = () -> setMotorPosition(false);
-    private final Runnable mExtendCamera = () -> setMotorPosition(true);
+    private boolean mFrontCameraUnavailable;
+    private boolean mMotorExtended;
+
+    private final Runnable mRetractCamera = () -> {
+        if (!mFrontCameraUnavailable && mMotorExtended && setMotorPosition(false)) {
+            mMotorExtended = false;
+        }
+    };
+    private final Runnable mExtendCamera = () -> {
+        if (mFrontCameraUnavailable && !mMotorExtended && setMotorPosition(true)) {
+            mMotorExtended = true;
+        }
+    };
 
     private final CameraManager.AvailabilityCallback mAvailabilityCallback =
             new CameraManager.AvailabilityCallback() {
                 @Override
                 public void onCameraAvailable(@NonNull String cameraId) {
                     if (FRONT_CAMERA_ID.equals(cameraId)) {
-                        scheduleMotorAction(mRetractCamera);
+                        mFrontCameraUnavailable = false;
+                        mHandler.removeCallbacks(mExtendCamera);
+                        if (mMotorExtended) {
+                            scheduleMotorAction(mRetractCamera);
+                        }
                     }
                 }
 
                 @Override
                 public void onCameraUnavailable(@NonNull String cameraId) {
                     if (FRONT_CAMERA_ID.equals(cameraId)) {
-                        scheduleMotorAction(mExtendCamera);
+                        mFrontCameraUnavailable = true;
+                        mHandler.removeCallbacks(mRetractCamera);
+                        if (!mMotorExtended) {
+                            scheduleMotorAction(mExtendCamera);
+                        }
                     }
                 }
             };
@@ -58,7 +77,10 @@ public final class CameraMotorService extends Service {
         getSystemService(CameraManager.class).unregisterAvailabilityCallback(
                 mAvailabilityCallback);
         mHandler.removeCallbacksAndMessages(null);
-        setMotorPosition(false);
+        if (mMotorExtended) {
+            setMotorPosition(false);
+            mMotorExtended = false;
+        }
         super.onDestroy();
     }
 
@@ -73,12 +95,14 @@ public final class CameraMotorService extends Service {
         mHandler.postDelayed(action, CAMERA_EVENT_DELAY_MILLIS);
     }
 
-    private void setMotorPosition(boolean extended) {
+    private boolean setMotorPosition(boolean extended) {
         try {
             LgeMotor.setParameters(extended ? "popup_cam=on" : "popup_cam=off");
+            return true;
         } catch (Exception e) {
             Log.e(TAG, "Failed to " + (extended ? "extend" : "retract")
                     + " popup camera", e);
+            return false;
         }
     }
 }
