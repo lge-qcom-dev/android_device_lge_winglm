@@ -644,7 +644,6 @@ vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib64/hw/fingerprint.lito.so
 vendor/lib64/libRbsFlow.so
 vendor/lib64/libets_teeclient_v2.so
-vendor/lib64/libfpsph.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # IPA firmware
