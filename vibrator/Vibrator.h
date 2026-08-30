@@ -9,6 +9,8 @@
 
 #include <aidl/android/hardware/vibrator/BnVibrator.h>
 
+#include <atomic>
+
 namespace aidl {
 namespace android {
 namespace hardware {
@@ -49,10 +51,17 @@ class Vibrator : public BnVibrator {
                                    const std::shared_ptr<IVibratorCallback>& callback) override;
 
   private:
+    ndk::ScopedAStatus stop();
+    void play(int32_t timeoutMs, uint8_t amplitude, uint64_t sequence,
+              const std::shared_ptr<IVibratorCallback>& callback);
+
     int32_t mFile_desc;
     int32_t mNumActuators;
 
+    std::atomic<uint64_t> mSequence = 0;
+
     uint8_t mCurrentAmplitude;
+    uint8_t mDefaultAmplitude;
 
     int32_t mClickDuration;
     int32_t mTickDuration;
@@ -63,4 +72,3 @@ class Vibrator : public BnVibrator {
 }  // namespace hardware
 }  // namespace android
 }  // namespace aidl
-

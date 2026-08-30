@@ -9,7 +9,7 @@ cc_binary {
     relative_install_path: "hw",
     header_libs: ["generated_kernel_headers"],
     init_rc: ["android.hardware.vibrator-service.winglm.rc"],
-    vintf_fragments: ["android.hardware.vibrator-service.lge.xml"],
+    vintf_fragments: ["android.hardware.vibrator-service.winglm.xml"],
     cppflags: [
         "-Wno-reserved-user-defined-literal",
         "-Wno-unused-parameter",
