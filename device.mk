@@ -24,6 +24,9 @@ PRODUCT_PACKAGES += \
     libets_teeclient_v2_shim \
     sensors.lge
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.winglm
 
 # Display
 PRODUCT_COPY_FILES += \

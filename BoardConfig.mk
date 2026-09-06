@@ -12,6 +12,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
+# SEPolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.hardware=winglm
 TARGET_KERNEL_CONFIG := vendor/lineageos_wing_defconfig
