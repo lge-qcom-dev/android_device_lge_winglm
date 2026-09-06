@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<layouts>
+    <layout>
+        <state>0</state>
+        <name>closed</name>
+
+        <display enabled="true" defaultDisplay="true">
+            <port>129</port>
+        </display>
+
+        <display enabled="false">
+            <port>130</port>
+        </display>
+    </layout>
+
+    <layout>
+        <state>1</state>
+        <name>opened</name>
+
+        <display enabled="true" defaultDisplay="true">
+            <port>129</port>
+        </display>
+
+        <display enabled="true">
+            <port>130</port>
+        </display>
+    </layout>
+</layouts>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<device-state-config>
+    <device-state>
+        <identifier>0</identifier>
+        <name>CLOSED</name>
+        <properties/>
+        <conditions>
+            <lid-switch>
+                <open>false</open>
+            </lid-switch>
+        </conditions>
+    </device-state>
+
+    <device-state>
+        <identifier>1</identifier>
+        <name>OPENED</name>
+        <properties/>
+        <conditions>
+            <lid-switch>
+                <open>true</open>
+            </lid-switch>
+        </conditions>
+    </device-state>
+</device-state-config>
