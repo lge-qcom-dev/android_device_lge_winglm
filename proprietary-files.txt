@@ -612,6 +612,12 @@ vendor/etc/camera/smartcam/9_2_L_smartcam_food.dat
 vendor/etc/camera/smartcam/9_smartcam_food.dat
 vendor/etc/camera/vnr/SJ_VideoNR_LUT.bin
 
+# Camera - CVP
+vendor/lib64/libcvp.so
+vendor/lib64/libcvp_common.so
+vendor/lib64/libcvp_stub.so
+vendor/lib64/libcvpcpuRev_skel.so
+
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
 
