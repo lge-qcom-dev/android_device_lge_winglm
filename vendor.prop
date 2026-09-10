@@ -2,6 +2,7 @@
 ro.vendor.lge.logical.camera=2
 ro.vendor.lge.aux.camera=1
 ro.vendor.lge.physical.camera=4
+vendor.camera.provider.blacklist_ids=4,5,6,7,8,9
 
 # Display
 ro.vendor.lge.feature.display_notch_height=0
