@@ -9,10 +9,12 @@
         <name>closed</name>
 
         <display enabled="true" defaultDisplay="true">
+            <address>4630946736071014273</address>
             <port>129</port>
         </display>
 
         <display enabled="false">
+            <address>4630946299134858882</address>
             <port>130</port>
         </display>
     </layout>
@@ -22,11 +24,13 @@
         <name>opened</name>
 
         <display enabled="true" defaultDisplay="true">
+            <address>4630946736071014273</address>
             <port>129</port>
         </display>
 
         <!-- Keep the swivel panel out of the default (AOD-capable) power group. -->
         <display enabled="true" displayGroup="swivel">
+            <address>4630946299134858882</address>
             <port>130</port>
         </display>
     </layout>
