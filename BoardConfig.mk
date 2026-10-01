@@ -17,7 +17,7 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.hardware=winglm
-TARGET_KERNEL_CONFIG := vendor/lineageos_wing_defconfig
+TARGET_KERNEL_CONFIG += vendor/lge/lge-wing.config
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
