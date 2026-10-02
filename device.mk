@@ -20,8 +20,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.lge \
-    libets_teeclient_v2_shim \
+    android.hardware.biometrics.fingerprint-service.lge \
     sensors.lge
 
 # Vibrator
