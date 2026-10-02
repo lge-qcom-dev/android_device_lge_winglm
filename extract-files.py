@@ -26,8 +26,6 @@ namespace_imports = [
 
 
 blob_fixups: blob_fixups_user_type = {
-    'vendor/lib64/libets_teeclient_v2.so': blob_fixup()
-        .replace_needed('libfpsph.so', 'libets_teeclient_v2_shim.so'),
     'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so': blob_fixup()
         .sig_replace('80 00 80 52 21 00 80 52 e7 09 00 94', '1f 20 03 d5 1f 20 03 d5 1f 20 03 d5'),
 }  # fmt: skip
