@@ -19,11 +19,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.lge \
-    libets_teeclient_v2_shim \
-    sensors.lge
+$(call soong_config_set,lge_udfps,sensor_x,540)
+$(call soong_config_set,lge_udfps,sensor_y,2005)
+$(call soong_config_set,lge_udfps,sensor_radius,97)
+$(call soong_config_set_bool,lge_udfps,managed_sequence,true)
 
+$(call inherit-product, hardware/lge/aidl/biometrics/fingerprint/udfps.mk)
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.winglm
@@ -39,10 +40,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     WingCameraHelper
 
+# Sensors
+PRODUCT_PACKAGES += \
+    sensors.lge
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
-
-$(call soong_config_set,LGE_FINGERPRINT_HAL,TARGET_HAS_EGISTEC_UDFPS,true)
 
 # Overlays
 PRODUCT_PACKAGES += \
