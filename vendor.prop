@@ -13,6 +13,11 @@ ro.vendor.lge.feature.lge_display_type=POLED
 ro.vendor.lge.feature.multi_display=true
 ro.vendor.lge.feature.multi_display_type=swivel
 
+# Fingerprint
+persist.vendor.fingerprint.type=udfps_optical
+persist.vendor.fingerprint.sensor_location=540|2005|97
+persist.vendor.fingerprint.has_touch_reset_ctrl=true
+
 # Miscellaneous
 ro.vendor.lge.build.target_operator=LAO
 ro.vendor.lge.build.target_country=COM
