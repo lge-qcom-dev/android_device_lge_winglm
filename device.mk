@@ -21,6 +21,9 @@ PRODUCT_COPY_FILES += \
 # Fingerprint
 $(call inherit-product, hardware/lge/configs/udfps.mk)
 
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.fingerprint.managed_sequence=true
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.winglm
