@@ -22,6 +22,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, hardware/lge/configs/udfps.mk)
 
 PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.fingerprint.dimming_reference=1363 \
     persist.vendor.fingerprint.managed_sequence=true
 
 # Vibrator
